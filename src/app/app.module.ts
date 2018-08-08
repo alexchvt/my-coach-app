@@ -7,6 +7,7 @@ import { CoachComponent } from './coach/coach.component';
 import { TraineeComponent } from './trainee/trainee.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { MenuMainComponent } from './menu-main/menu-main.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AppRoutingModule } from './/app-routing.module';
     CoachesComponent,
     CoachComponent,
     TraineeComponent,
-    AgendaComponent
+    AgendaComponent,
+    MenuMainComponent
   ],
   imports: [
     BrowserModule,
