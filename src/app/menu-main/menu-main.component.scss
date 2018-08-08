@@ -1,0 +1,24 @@
+@import "../../styles.scss";
+
+header {
+    background: linear-gradient(to right,#F77754,#F65953);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', 'Arial';
+    font-size: 3.5rem;
+}
+
+nav {
+    padding-left: 20rem;
+    padding-right: 20rem;
+}
+
+body {
+    background-color: black;
+}

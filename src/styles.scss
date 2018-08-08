@@ -1,24 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-color1 {
-    color : #B24A5B;
-}
+@import "~bootstrap/scss/bootstrap.scss";
+@import "sass/constant.scss";
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400');
 
-color2 {
-    color : #FFFA9D;
-}
-
-color3 {
-    color : #FF8498;
-}
-
-color4 {
-    color : #55A8CC;
-}
-
-color5 {
-    color : #5396B2;
-}
-
-body {
-background-color: #FAFBFC;
+html {
+    background-color: $background-primary;
 }
