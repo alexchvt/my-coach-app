@@ -1,7 +1,7 @@
 @import "../../styles.scss";
 
 header {
-    background: linear-gradient(to right,#F77754,#F65953);
+    background: $primary-color;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 
@@ -15,10 +15,24 @@ h1 {
 }
 
 nav {
-    padding-left: 20rem;
-    padding-right: 20rem;
+    padding-left: 30rem;
+    padding-right: 30rem;
+    background-color: $secondary-color;
+    color: white;
 }
 
-body {
-    background-color: black;
+.btn {
+    color: $primary;
+    border-color: $primary;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: $primary;
+    transition:0.3s all ease;
+    
 }

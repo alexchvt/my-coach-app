@@ -5,6 +5,24 @@
     $color4 : #55A8CC;
     $color5 : #5396B2;
     
+    $primary-color : #B24A5B;
+    $secondary-color: #BF4F62;
+    $primary-color-dark: #722F3A;
+
+//Bootstrap override
+    $primary: #5396B2;
+    
+    $theme-colors : (
+        "primary": #5396B2,
+        "danger": #ff4136
+      ) ;
 
 // Background
     $background-primary: #FAFBFC;
+
+    $primary: #5396B2;
+
+    $theme-colors : (
+        "primary": #5396B2,
+        "danger": #ff4136
+      ) ;
