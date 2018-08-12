@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Coach } from '../../shared/coach.model';
 
 @Component({
   selector: 'app-coaches',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coaches.component.scss']
 })
 export class CoachesComponent implements OnInit {
+  coaches: Coach[];
 
   constructor() { }
 
