@@ -1,5 +1,7 @@
-<section>
+<div class="row">
+<section *ngFor="let coach of coaches" class="col-md-4">
 <p>
-  coaches works!
+  {{coach.name}}
 </p>
 </section>
+</div>

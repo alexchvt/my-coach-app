@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Coach } from '../../shared/coach.model';
+import { mockCoaches } from './mock-coaches';
 
 @Component({
   selector: 'app-coaches',
@@ -9,9 +10,12 @@ import { Coach } from '../../shared/coach.model';
 export class CoachesComponent implements OnInit {
   coaches: Coach[];
 
-  constructor() { }
+  constructor() {
+    this.coaches = mockCoaches; 
+  }
 
   ngOnInit() {
+    
   }
 
 }
