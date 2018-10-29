@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Directive } from '@angular/core';
+import { CoachesComponent } from '../coaches/coaches.component';
 
 @Component({
   selector: 'app-menu-main',

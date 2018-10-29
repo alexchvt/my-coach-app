@@ -5,19 +5,22 @@ export const mockCoaches: Coach[] = [{
     lastname: "Bon",
     age: 18,
     activities: ["tennis", "swimming"],
-    city: "Paris"
+    city: "Paris",
+    profilePicture: "../assets/img/32.jpg"
 },
 {
-    name: "Saucisse",
-    lastname: "Chaude",
+    name: "Tony",
+    lastname: "Danza",
     age: 32,
     activities: ["crossfit", "running"],
-    city: "Paris"
+    city: "Paris",
+    profilePicture: "../assets/img/32.jpg"
 },
 {
-    name: "Banane",
-    lastname: "Pomme",
+    name: "Tracy",
+    lastname: "McStretching",
     age: 26,
     activities: ["Yoga","Stretching"],
-    city: "Paris"
+    city: "Paris",
+    profilePicture: "../assets/img/35.jpg"
 }]

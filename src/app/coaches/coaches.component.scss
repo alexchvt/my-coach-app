@@ -1,5 +1,11 @@
 @import "../../styles.scss";
 
-body {
+.row {
+    margin: 10rem;
+}
+
+.coachescard {
     background: $primary-color;
+    height: 4rem;
+    max-width: 100%;
 }

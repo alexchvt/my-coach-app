@@ -4,4 +4,5 @@ export class Coach  {
     age: number;
     activities: string[];
     city: string;
+    profilePicture: string
 }
