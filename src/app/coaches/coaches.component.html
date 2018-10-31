@@ -1,12 +1,13 @@
 <div class="container-fluid">
   <div class="row card-group coachesrow">
-    <section *ngFor="let coach of coaches" class="col-3">
-      <div class="coachescard">
-        <div class="circlepp">
-        <img src="{{coach.profilePicture}}">
+    <div *ngFor="let coach of coaches" class="col-xs-9 col-sm-8 col-md-8 col-lg-6 col-xl-4 mb-4 ">
+      <div class="coachescard justify-content-center">
+        <span id="triangle-topright" class="float-right"></span>
+        <div class="coachespp">
+        <img class="circlepp" src="{{coach.profilePicture}}">
         </div>
-        {{coach.name}} {{coach.lastname}}
+        <div class="coachesname">{{coach.name}} {{coach.lastname}}</div>
       </div>
-    </section>
+    </div>
   </div>
 </div>
