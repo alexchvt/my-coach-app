@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CoachesComponent } from './coaches/coaches.component';
@@ -8,6 +9,7 @@ import { TraineeComponent } from './trainee/trainee.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuMainComponent } from './menu-main/menu-main.component';
+import { SearchcoachesPipe } from './searchcoaches/searchcoaches.pipe';
 
 @NgModule({
   declarations: [
@@ -16,10 +18,12 @@ import { MenuMainComponent } from './menu-main/menu-main.component';
     CoachComponent,
     TraineeComponent,
     AgendaComponent,
-    MenuMainComponent
+    MenuMainComponent,
+    SearchcoachesPipe,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

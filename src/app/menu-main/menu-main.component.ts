@@ -1,5 +1,4 @@
-import { Component, OnInit, Directive } from '@angular/core';
-import { CoachesComponent } from '../coaches/coaches.component';
+import { Component, OnInit, Directive, NgModule, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-menu-main',
@@ -8,7 +7,17 @@ import { CoachesComponent } from '../coaches/coaches.component';
 })
 export class MenuMainComponent implements OnInit {
 
-  constructor() { }
+  searchContent: string;
+  @Output() searchToken = new EventEmitter<string>();
+
+  constructor() {}
+
+    sendSearch() {
+      this.searchToken.emit(this.searchContent);
+      console.log(this.searchToken)
+    }
+
+ 
 
   ngOnInit() {
   }
