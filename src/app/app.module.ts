@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CoachesComponent } from './coaches/coaches.component';
@@ -10,6 +11,8 @@ import { AgendaComponent } from './agenda/agenda.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuMainComponent } from './menu-main/menu-main.component';
 import { SearchcoachesPipe } from './searchcoaches/searchcoaches.pipe';
+
+import { CoachsService } from '../shared/coachs.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,10 @@ import { SearchcoachesPipe } from './searchcoaches/searchcoaches.pipe';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [CoachsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
