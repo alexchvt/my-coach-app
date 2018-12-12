@@ -8,7 +8,7 @@ import { AgendaComponent } from './agenda/agenda.component';
 const routes : Routes = [
   {path: 'coaches', component: CoachesComponent, data: { title: 'Coaches'}},
   {path: 'agenda', component: AgendaComponent, data: { title: 'Agenda'}},
-  {path: 'coach', component: CoachComponent, data: { title: 'Coach Profile'}},
+  {path: 'coaches/:id', component: CoachComponent, data: { title: 'Coach Profile'}},
   {path: '', redirectTo: '/coaches', pathMatch: 'full'},
 
 ]

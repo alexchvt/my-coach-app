@@ -3,9 +3,13 @@
   My Coach
 </h1>
 </header>
-<nav class="row justify-content-center sticky-top">
-  <ul class="nav nav-pills nav-fill">
-    <li class="nav-item nav-link "><a routerLink="/coaches">Home</a></li>
+<nav class="navbar navbar-expand-lg row justify-content-center sticky-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+  <ul class="nav nav-pills nav-fill mr-auto mt-2 mt-lg-0">
+    <li class="nav-item nav-link "><a routerLink="/home">Home</a></li>
     <li class="nav-item nav-link "><a routerLink="/coaches">Coaches</a></li>
     <li class="nav-item nav-link "><a routerLink="/agenda">Agenda</a></li>
     <li> <form class="form-inline my-2 my-lg-0">
@@ -13,5 +17,6 @@
       <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)="sendSearch()">Search</button>
     </form></li>
   </ul>
+  </div>
 </nav>
-<app-coaches></app-coaches>
+<router-outlet></router-outlet>

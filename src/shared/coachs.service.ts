@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core'
 import { Headers, Http } from '@angular/http'
 import { HttpClient } from '@angular/common/http';
 import { Coach } from './coach.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class CoachsService {
@@ -16,8 +17,12 @@ export class CoachsService {
        return this.http.post(this.serverUrl + '/coaches', servers)
     }
 
-    getCoachs() {
-        return this.http.get(this.serverUrl + '/coaches'); 
+    getCoachs(): Observable<Coach[]> {
+        return this.httpClient.get<Coach[]>(this.serverUrl + '/coaches'); 
+    }
+
+    getCoach(id): Observable<Coach> {
+        return this.httpClient.get<Coach>(this.serverUrl + '/coaches/' + id);
     }
 
 }

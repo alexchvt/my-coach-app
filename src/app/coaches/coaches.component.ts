@@ -22,13 +22,9 @@ export class CoachesComponent implements OnInit {
     this.searchTokenReceiver = $event
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.coachsServices.getCoachs().subscribe(
-      (response : Response) => {
-        this.coaches = response.json();
-      },
-      (error) => console.log(error)
-    )
+      coaches => this.coaches = coaches);
   }
 
 }

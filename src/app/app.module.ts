@@ -15,6 +15,7 @@ import { SearchcoachesPipe } from './searchcoaches/searchcoaches.pipe';
 
 import { CoachsService } from '../shared/coachs.service';
 import { LoginComponent } from './login/login.component';
+import { UserService } from 'src/shared/user.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,10 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     HttpModule
   ],
-  providers: [CoachsService],
+  providers: [
+    CoachsService,
+    UserService,
+    HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
