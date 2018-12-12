@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Response } from '@angular/http';
 import { Coach } from '../../shared/coach.model';
 import { mockCoaches } from './mock-coaches';
+
 import { CoachsService } from '../../shared/coachs.service';
 
 @Component({
@@ -14,7 +16,6 @@ export class CoachesComponent implements OnInit {
   coaches: Coach[];
 
   constructor(private coachsServices: CoachsService) {
-    this.coaches = mockCoaches; 
   }
 
   receiveSearch($event) {
@@ -23,7 +24,9 @@ export class CoachesComponent implements OnInit {
 
   ngOnInit() {
     this.coachsServices.getCoachs().subscribe(
-      (response) => console.log(response),
+      (response : Response) => {
+        this.coaches = response.json();
+      },
       (error) => console.log(error)
     )
   }
