@@ -6,6 +6,7 @@ import { Component, OnInit, Directive, NgModule, Output, EventEmitter } from '@a
   styleUrls: ['./menu-main.component.scss']
 })
 export class MenuMainComponent implements OnInit {
+  navbarOpen = false;
 
   searchContent: string;
   @Output() searchToken = new EventEmitter<string>();
@@ -17,9 +18,11 @@ export class MenuMainComponent implements OnInit {
       console.log(this.searchToken)
     }
 
- 
-
   ngOnInit() {
+  }
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
   }
 
 }

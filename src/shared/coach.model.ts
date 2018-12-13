@@ -5,5 +5,5 @@ export class Coach  {
     city: string;
     zipcode: number;
     activities: string[];
-    profilePicture: string
+    picture: string;
 }

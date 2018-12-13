@@ -1,11 +1,11 @@
-  <div class="container-fluid">
+<div class="container-fluid">
   <div class="row card-group coachesrow">
     <div *ngFor="let coach of coaches" class="col-xs-9 col-sm-8 col-md-8 col-lg-6 col-xl-4 mb-4 ">
       <div class="coachescard justify-content-center">
         <a [routerLink]="['/coaches', coach.id]">
         <span id="triangle-topright" class="float-right"></span>
         <div class="coachespp">
-        <img class="circlepp" src="{{coach.profilePicture}}">
+        <img class="circlepp" src="{{coach.picture}}">
         </div>
         <div class="coachesname">{{coach.name}} {{coach.lastname}} {{searchTokenReceiver}}</div>
         <div class="coachesactivities">{{coach.activities}}</div>

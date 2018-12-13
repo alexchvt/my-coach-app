@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Response } from '@angular/http';
 import { Coach } from '../../shared/coach.model';
-import { mockCoaches } from './mock-coaches';
 
 import { CoachsService } from '../../shared/coachs.service';
 
