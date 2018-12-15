@@ -4,10 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoachesComponent } from './coaches/coaches.component';
 import { CoachComponent } from './coach/coach.component';
 import { AgendaComponent } from './agenda/agenda.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes : Routes = [
   {path: 'coaches', component: CoachesComponent, data: { title: 'Coaches'}},
   {path: 'agenda', component: AgendaComponent, data: { title: 'Agenda'}},
+  {path: 'admin', component: AdminComponent, data: { title: 'Admin'}},
   {path: 'coaches/:id', component: CoachComponent, data: { title: 'Coach Profile'}},
   {path: '', redirectTo: '/coaches', pathMatch: 'full'},
 

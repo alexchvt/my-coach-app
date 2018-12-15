@@ -24,11 +24,11 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.css"    
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "node_modules/bootstrap/scss",   
+                "node_modules/bootstrap/scss",
                 "src/sass"
               ]
             },
@@ -130,5 +130,10 @@
       }
     }
   },
-  "defaultProject": "my-coach-app"
+  "defaultProject": "my-coach-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

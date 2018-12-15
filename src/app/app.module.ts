@@ -16,6 +16,7 @@ import { SearchcoachesPipe } from './searchcoaches/searchcoaches.pipe';
 import { CoachsService } from '../shared/coachs.service';
 import { LoginComponent } from './login/login.component';
 import { UserService } from 'src/shared/user.service';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { UserService } from 'src/shared/user.service';
     MenuMainComponent,
     SearchcoachesPipe,
     LoginComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
