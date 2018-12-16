@@ -3,6 +3,7 @@ import { Headers, Http } from '@angular/http'
 import { HttpClient } from '@angular/common/http';
 import { Coach } from './coach.model';
 import { Observable } from 'rxjs';
+import { Body } from '@angular/http/src/body';
 
 @Injectable()
 export class CoachsService {
@@ -13,8 +14,9 @@ export class CoachsService {
 
     private serverUrl = 'http://localhost:9090'
 
-    saveCoach (servers: any[]) {
-       return this.http.post(this.serverUrl + '/coaches', servers)
+    addCoach (coach: any) {
+        const headers = new Headers({ 'Content-Type': 'application/json' });
+       return this.http.post(this.serverUrl + '/coaches', {Body: coach}, {headers: headers});
     }
 
     getCoachs(): Observable<Coach[]> {
