@@ -15,6 +15,7 @@ export class AdminComponent implements OnInit {
   constructor(private coachsService: CoachsService) { }
 
   onAddCoach(){
+    console.log(JSON.stringify([this.coach]));
     this.coachsService.addCoach(this.coach).subscribe(
       (response) => console.log(response),
       (error) => console.log(error),
