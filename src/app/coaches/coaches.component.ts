@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Coach } from '../../shared/coach.model';
 
 import { CoachsService } from '../../shared/coachs.service';
+import { MenuService } from 'src/shared/menu.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-coaches',
@@ -10,19 +12,27 @@ import { CoachsService } from '../../shared/coachs.service';
 })
 export class CoachesComponent implements OnInit {
 
-  searchTokenReceiver: string;
+  searchString: string;
   coaches: Coach[];
+  subscription: Subscription
 
-  constructor(private coachsServices: CoachsService) {
+  constructor(private coachsService: CoachsService, private menuservice: MenuService) {
+    this.subscription = menuservice.searchContent$.subscribe(searchString => {
+      this.searchString = searchString;
+      this.fillCoachs(searchString);
+    });
   }
 
-  receiveSearch($event) {
-    this.searchTokenReceiver = $event
-  }
+  
 
   ngOnInit(): void {
-    this.coachsServices.getCoachs().subscribe(
+    this.coachsService.getCoachs().subscribe(
       coaches => this.coaches = coaches);
   }
+
+  fillCoachs(search: string) {
+    this.coachsService.searchCoach(search).subscribe(
+        coaches => this.coaches = coaches);
+    }
 
 }

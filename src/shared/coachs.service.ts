@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core'
-import { Http } from '@angular/http'
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Coach } from './coach.model';
 import { Observable } from 'rxjs';
-import { Body } from '@angular/http/src/body';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -15,14 +13,17 @@ const httpOptions = {
 export class CoachsService {
     // const headers = new Headers({'Content-Type': 'application/json'})
 
-    constructor(private http: Http,
-                private httpClient: HttpClient) {}
+    constructor(private httpClient: HttpClient) {}
 
     private serverUrl = 'http://localhost:9090'
 
     addCoach (coach: Coach): Observable<Coach> {
        return this.httpClient.post<Coach>(this.serverUrl + '/coaches', coach, httpOptions);
     }
+
+    searchCoach (search: String): Observable<Coach[]> {
+        return this.httpClient.post<Coach[]>(this.serverUrl + '/coaches/search', search, httpOptions);
+     }
 
     getCoachs(): Observable<Coach[]> {
         return this.httpClient.get<Coach[]>(this.serverUrl + '/coaches'); 

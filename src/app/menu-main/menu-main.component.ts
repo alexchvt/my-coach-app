@@ -1,4 +1,7 @@
 import { Component, OnInit, Directive, NgModule, Output, EventEmitter } from '@angular/core';
+import { MenuService } from 'src/shared/menu.service';
+import { CoachsService } from 'src/shared/coachs.service';
+import { Coach } from 'src/shared/coach.model';
 
 @Component({
   selector: 'app-menu-main',
@@ -7,16 +10,20 @@ import { Component, OnInit, Directive, NgModule, Output, EventEmitter } from '@a
 })
 export class MenuMainComponent implements OnInit {
   navbarOpen = false;
+  coaches: Coach[];
 
   searchContent: string;
-  @Output() searchToken = new EventEmitter<string>();
 
-  constructor() {}
+  constructor(private menuservice: MenuService, private coachsService: CoachsService) {}
 
     sendSearch() {
-      this.searchToken.emit(this.searchContent);
-      console.log(this.searchToken)
+      this.menuservice.newSearch(this.searchContent);
     }
+
+  fillCoachs(search: string) {
+  this.coachsService.searchCoach(search).subscribe(
+      coaches => this.coaches = coaches);
+  }
 
   ngOnInit() {
   }
