@@ -15,7 +15,7 @@ export class AdminComponent implements OnInit {
   constructor(private coachsService: CoachsService) { }
 
   onAddCoach(){
-    console.log(JSON.stringify([this.coach]));
+    console.log(JSON.stringify(this.coach));
     this.coachsService.addCoach(this.coach).subscribe(
       (response) => console.log(response),
       (error) => console.log(error),
@@ -36,7 +36,7 @@ export class AdminComponent implements OnInit {
       zipcode: 86400,
       activities: "zumba",
       picture: "example.jpeg",
-    } 
+    }
   }
 
 }
