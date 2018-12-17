@@ -13,10 +13,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { MenuMainComponent } from './menu-main/menu-main.component';
 
 import { CoachsService } from '../shared/coachs.service';
-import { LoginComponent } from './login/login.component';
 import { UserService } from 'src/shared/user.service';
 import { AdminComponent } from './admin/admin.component';
 import { MenuService } from 'src/shared/menu.service';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,9 @@ import { MenuService } from 'src/shared/menu.service';
     TraineeComponent,
     AgendaComponent,
     MenuMainComponent,
-    LoginComponent,
     AdminComponent,
+    SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
