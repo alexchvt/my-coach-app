@@ -1,5 +1,6 @@
 <div class="container-fluid">
   <div class="row card-group coachesrow">
+    <ng-template [ngIf]="authService.isAuthenticated()">
     <div *ngFor="let coach of coaches" class="col-xs-9 col-sm-8 col-md-8 col-lg-6 col-xl-4 mb-4 ">
       <div class="coachescard justify-content-center">
         <a [routerLink]="['/coaches', coach.id]">
@@ -13,5 +14,6 @@
         </a>
       </div>
     </div>
+    </ng-template>
   </div>
 </div>

@@ -10,6 +10,39 @@
     <p class="coachname">{{coach.name}} {{coach.lastname}}</p>
       <p class="coachlocation"><i class="material-icons">
           room
-          </i>{{coach.zipcode}} {{coach.city}}</p></div>
-  <div class ="coachmetric col-xl-6"></div>
+          </i>{{coach.zipcode}} {{coach.city}}</p>
+          <button type="button" class="btn btn-success" (click)="show = !show">Update</button>
+          <button type="button" class="btn btn-danger" (click)="deleteCoach()">Delete</button>
+  </div>
+  <div class ="coachinfos col-xl-6 offset-xl-3">
+      <ng-template [ngIf]="!show"> 
+          <form (ngSubmit)="updateCoach(f)" #f="ngForm" class="col-md-5 col-xl-4 offset-md-4 offset-xl-4">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="name" class="form-control" name="name" placeholder="Name" [(ngModel)]="coach.name">
+              </div>
+              <div class="form-group">
+                <label>Lastname</label>
+                <input type="lastname" class="form-control" name="lastname" placeholder="Lastname" [(ngModel)]="coach.lastname">
+              </div>
+              <div class="form-group">
+                <label>Zipcode</label>
+                <input type="zipcode" class="form-control" name="zipcode" placeholder="Zipcode" [(ngModel)]="coach.zipcode">
+              </div>
+              <div class="form-group">
+                <label>City</label>
+                <input type="city" class="form-control" name="City" [(ngModel)]="coach.city">
+              </div>
+              <!-- <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div> -->
+              <div class="form-group">
+                <label for="exampleTextarea">Activities</label>
+                <textarea class="form-control" id="exampleTextarea" name="activities" rows="3" [(ngModel)]="coach.activities"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+      </ng-template>
+  </div>   
 </div>

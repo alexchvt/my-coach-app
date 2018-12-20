@@ -21,6 +21,14 @@ export class CoachsService {
        return this.httpClient.post<Coach>(this.serverUrl + '/coaches', coach, httpOptions);
     }
 
+    updateCoach(coach: Coach): Observable<Coach> {
+        return this.httpClient.put<Coach>(this.serverUrl + '/coaches/' + coach.id, coach, httpOptions);
+     }
+
+     deleteCoach(id): Observable<Coach> {
+        return this.httpClient.delete<Coach>(this.serverUrl + '/coaches/' + id);
+    } 
+
     searchCoach (search: String): Observable<Coach[]> {
         return this.httpClient.post<Coach[]>(this.serverUrl + '/coaches/search', search, httpOptions);
      }

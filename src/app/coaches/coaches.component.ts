@@ -4,6 +4,7 @@ import { Coach } from '../../shared/coach.model';
 import { CoachsService } from '../../shared/coachs.service';
 import { MenuService } from 'src/shared/menu.service';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/shared/auth.service';
 
 @Component({
   selector: 'app-coaches',
@@ -16,11 +17,11 @@ export class CoachesComponent implements OnInit {
   coaches: Coach[];
   subscription: Subscription
 
-  constructor(private coachsService: CoachsService, private menuservice: MenuService) {
+  constructor(private coachsService: CoachsService, private menuservice: MenuService, private authService: AuthService) {
     this.subscription = menuservice.searchContent$.subscribe(searchString => {
       this.searchString = searchString;
       this.fillCoachs(searchString);
-      
+
       if (!searchString){
         this.coachsService.getCoachs().subscribe(
           coaches => this.coaches = coaches);

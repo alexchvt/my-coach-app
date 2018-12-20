@@ -12,6 +12,7 @@ import { Coach } from 'src/shared/coach.model';
 export class CoachComponent implements OnInit {
 
   coach : Coach;
+  show = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,6 +22,17 @@ export class CoachComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCoach();
+  }
+
+  updateCoach() {
+    this.coachService.updateCoach(this.coach).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error),
+    );
+  }
+
+  deleteCoach() {
+    this.coachService.deleteCoach(this.coach.id);
   }
 
   getCoach() {

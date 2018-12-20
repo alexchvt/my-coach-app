@@ -1,6 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { CoachsService } from 'src/shared/coachs.service';
 import { Coach } from 'src/shared/coach.model';
+import { AuthService } from 'src/shared/auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -10,8 +11,9 @@ import { Coach } from 'src/shared/coach.model';
 export class AdminComponent implements OnInit {
 
   coach : Coach;
+  tabValue = 1;
 
-  constructor(private coachsService: CoachsService) { }
+  constructor(private coachsService: CoachsService, private authService: AuthService) { }
 
   onAddCoach(){
     this.coachsService.addCoach(this.coach).subscribe(
