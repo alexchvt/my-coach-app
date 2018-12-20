@@ -2,6 +2,7 @@ import { Component, OnInit, Directive, NgModule, Output, EventEmitter } from '@a
 import { MenuService } from 'src/shared/menu.service';
 import { CoachsService } from 'src/shared/coachs.service';
 import { Coach } from 'src/shared/coach.model';
+import { AuthService } from 'src/shared/auth.service';
 
 @Component({
   selector: 'app-menu-main',
@@ -14,10 +15,11 @@ export class MenuMainComponent implements OnInit {
 
   searchContent: string;
 
-  constructor(private menuservice: MenuService, private coachsService: CoachsService) {}
+  constructor(private menuservice: MenuService, private coachsService: CoachsService, private authService: AuthService) {}
 
     sendSearch() {
       this.menuservice.newSearch(this.searchContent);
+      this.searchContent = "";
     }
 
   fillCoachs(search: string) {

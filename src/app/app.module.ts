@@ -18,6 +18,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MenuService } from 'src/shared/menu.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
+import { AuthService } from 'src/shared/auth.service';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { SigninComponent } from './auth/signin/signin.component';
     CoachsService,
     UserService,
     MenuService,
+    AuthService,
     HttpClientModule],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
-import { Coach } from "./coach.model";
 
 @Injectable()
 export class MenuService {

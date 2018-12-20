@@ -7,15 +7,21 @@
     <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
         <span class="navbar-toggler-icon"></span>
       </button>
-  <div *ngIf="" class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
   <ul class="nav nav-pills nav-fill mr-auto mt-2 mt-lg-0">
+    <ng-template [ngIf]="!authService.isAuthenticated()">
+      <li class="nav-item"><a class="nav-link" routerLink="/signup" href="#">Signup</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/signin">Signin</a></li>
+    </ng-template>
+    <ng-template [ngIf]="authService.isAuthenticated()"> 
     <li class="nav-item"><a class="nav-link" routerLink="/home" href="#">Home</a></li>
     <li class="nav-item"><a class="nav-link" routerLink="/coaches">Coaches</a></li>
-    <li class="nav-item"><a class="nav-link" routerLink="/admin">Admin</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/admin">Admin</a></li>   
     <li> <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchContent" [ngModelOptions]="{standalone: true}">
       <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)="sendSearch()">Search</button>
     </form></li>
+  </ng-template>
   </ul>
   </div>
 </nav>

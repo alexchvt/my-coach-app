@@ -6,5 +6,4 @@ export class Coach  {
     zipcode: number;
     activities: string;
     picture: string;
-
 }

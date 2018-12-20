@@ -6,14 +6,16 @@ import { CoachComponent } from './coach/coach.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { AdminComponent } from './admin/admin.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 const routes : Routes = [
   {path: 'coaches', component: CoachesComponent, data: { title: 'Coaches'}},
   {path: 'agenda', component: AgendaComponent, data: { title: 'Agenda'}},
   {path: 'admin', component: AdminComponent, data: { title: 'Admin'}},
   {path: 'coaches/:id', component: CoachComponent, data: { title: 'Coach Profile'}},
-  {path: '', redirectTo: '/coaches', pathMatch: 'full'},
+  {path: '', redirectTo: '/signin', pathMatch: 'full'},
   {path: 'signup', component: SignupComponent, data: { title: 'Signup'}},
+  {path: 'signin', component: SigninComponent, data: { title: 'Signin'}},
 ]
 
 @NgModule({

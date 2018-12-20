@@ -20,6 +20,11 @@ export class CoachesComponent implements OnInit {
     this.subscription = menuservice.searchContent$.subscribe(searchString => {
       this.searchString = searchString;
       this.fillCoachs(searchString);
+      
+      if (!searchString){
+        this.coachsService.getCoachs().subscribe(
+          coaches => this.coaches = coaches);
+      }
     });
   }
 
