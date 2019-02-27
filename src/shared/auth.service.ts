@@ -1,7 +1,7 @@
 import * as firebase from 'firebase';
 
 export class AuthService {
-    token:string;
+    token: string;
 
     signupUser(email: string, password: string) {
         firebase.auth().createUserWithEmailAndPassword(email, password)
