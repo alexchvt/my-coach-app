@@ -1,5 +1,5 @@
 export class Coach  {
-    id: number;
+    id?: number;
     name: string;
     lastname: string;
     age: number;

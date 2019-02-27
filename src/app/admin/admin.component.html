@@ -1,17 +1,5 @@
 <div class="container-fluid">
   <ng-template [ngIf]="authService.isAuthenticated()">
-    <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link active" (click)="tabvalue == 1">Add</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="tabvalue == 2">Update</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" >Delete</a>
-      </li>
-    </ul>
-    <p>{{tabValue}}</p>  
   <form (ngSubmit)="onAddCoach(f)" #f="ngForm" class="col-md-5 col-xl-4 offset-md-4 offset-xl-4">
     <div class="form-group">
       <label>Name</label>
