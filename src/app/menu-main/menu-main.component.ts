@@ -34,4 +34,8 @@ export class MenuMainComponent implements OnInit {
     this.navbarOpen = !this.navbarOpen;
   }
 
+  onLogout() {
+    this.authService.logout();
+  }
+
 }
