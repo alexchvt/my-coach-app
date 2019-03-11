@@ -11,7 +11,6 @@ const httpOptions = {
 
 @Injectable()
 export class CoachsService {
-    // const headers = new Headers({'Content-Type': 'application/json'})
 
     constructor(private httpClient: HttpClient) {}
 
@@ -25,16 +24,16 @@ export class CoachsService {
         return this.httpClient.put<Coach>(this.serverUrl + '/coaches/' + coach.id, coach, httpOptions);
      }
 
-     deleteCoach(id): Observable<Coach> {
+    deleteCoach(id): Observable<Coach> {
         return this.httpClient.delete<Coach>(this.serverUrl + '/coaches/' + id);
-    } 
+    }
 
     searchCoach (search: String): Observable<Coach[]> {
         return this.httpClient.post<Coach[]>(this.serverUrl + '/coaches/search', search, httpOptions);
      }
 
     getCoachs(): Observable<Coach[]> {
-        return this.httpClient.get<Coach[]>(this.serverUrl + '/coaches'); 
+        return this.httpClient.get<Coach[]>(this.serverUrl + '/coaches');
     }
 
     getCoach(id): Observable<Coach> {

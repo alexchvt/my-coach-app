@@ -11,7 +11,7 @@ import { Coach } from 'src/shared/coach.model';
 })
 export class CoachComponent implements OnInit {
 
-  coach : Coach;
+  coach: Coach;
   show = false;
 
   constructor(
@@ -32,7 +32,9 @@ export class CoachComponent implements OnInit {
   }
 
   deleteCoach() {
-    this.coachService.deleteCoach(this.coach.id);
+    this.coachService.deleteCoach(this.coach.id).subscribe(
+    (response) => console.log(response),
+      (error) => console.log(error));
   }
 
   getCoach() {

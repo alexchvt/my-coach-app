@@ -15,7 +15,6 @@
           <button type="button" class="btn btn-danger" (click)="deleteCoach()">Delete</button>
   </div>
   <div class ="coachinfos col-xl-6 offset-xl-3">
-      <ng-template [ngIf]="!show"> 
           <form (ngSubmit)="updateCoach(f)" #f="ngForm" class="col-md-5 col-xl-4 offset-md-4 offset-xl-4">
               <div class="form-group">
                 <label>Name</label>
@@ -43,6 +42,5 @@
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-      </ng-template>
-  </div>   
+  </div>
 </div>
