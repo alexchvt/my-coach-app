@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AuthService {
     token: string;
+    currentUserType: string;
 
     constructor(private router: Router){}
 
@@ -29,6 +30,7 @@ export class AuthService {
         .catch(
             error => console.log(error)
         );
+
     }
 
     getToken() {
@@ -37,6 +39,25 @@ export class AuthService {
             (token: string) => this.token = token
         );
         return this.token;
+    }
+
+    getCurrentUserType() {
+      var usermail = firebase.auth().currentUser.email;
+      switch(usermail.charAt(0)) {
+        case 'a':{
+          this.currentUserType = 'admin';
+          break
+        }
+        case 'c':{
+          this.currentUserType = 'coach';
+          break
+        }
+        case 'l':{
+          this.currentUserType = 'learner';
+          break
+        }
+      }
+      return this.currentUserType;
     }
 
     isAuthenticated() {
