@@ -17,7 +17,7 @@ body {
     background: url('../../assets/img/photo-1496312093257-f869e5d95ce6.jpg') no-repeat;
     background-size: cover;
     background-position-x: 0rem;
-    background-position-y: -144px; 
+    background-position-y: -144px;
 }
 
 .circlepp {
@@ -67,4 +67,8 @@ body {
 .btn {
     margin-right: -2.5rem;
     margin-left: 3.5rem;
+ }
+
+ .input-group-text {
+   cursor: pointer;
  }

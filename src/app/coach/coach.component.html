@@ -5,8 +5,8 @@
     </span>
   </div>
   </div>
-<div class="container-fluid">
-  <div class ="coachdetail col-xl-2 offset-xl-1">
+<div class="container">
+  <div class ="coachdetail col-xl-2 ">
     <p class="coachname">{{coach.name}} {{coach.lastname}}</p>
       <p class="coachlocation"><i class="material-icons">
           room
@@ -15,8 +15,14 @@
           <button type="button" class="btn btn-success" (click)="show = !show">Update</button>
           <button type="button" class="btn btn-danger" (click)="deleteCoach()">Delete</button>
         </ng-template>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span role="button" class="input-group-text" (click)="onSendMessage()">Send Message</span>
+          </div>
+          <textarea class="form-control" aria-label="With textarea"></textarea>
         </div>
-
+  </div>
+<ng-template [*ngIf="isUserAdmin"]>
   <div class ="coachinfos col-xl-6 offset-xl-3">
           <form (ngSubmit)="updateCoach(f)" #f="ngForm" class="col-md-5 col-xl-4 offset-md-4 offset-xl-4">
               <div class="form-group">
@@ -45,6 +51,9 @@
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-
   </div>
+</ng-template>
+<div class ="coachinfos col-xl-6 offset-xl-4">
+<app-conversation></app-conversation>
+</div>
 </div>

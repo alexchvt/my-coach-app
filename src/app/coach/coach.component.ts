@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 import { CoachsService } from '../../shared/coachs.service';
 import { Coach } from 'src/shared/coach.model';
 import * as firebase from 'firebase';
@@ -20,7 +19,6 @@ export class CoachComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private coachService: CoachsService,
-    private location: Location,
     private authService: AuthService
   ) {}
 
@@ -52,8 +50,12 @@ export class CoachComponent implements OnInit {
     this.userType = this.authService.getCurrentUserType();
   }
 
+  onSendMessage() {
+    console.log("message sent");
+  }
+
   isUserAdmin() {
-    if (this.authService.getCurrentUserType() == 'admin') {
+    if (this.authService.getCurrentUserType() === 'admin') {
     return true;
     }
     return false;
