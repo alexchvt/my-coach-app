@@ -4,6 +4,7 @@ import { CoachsService } from '../../shared/coachs.service';
 import { Coach } from 'src/shared/coach.model';
 import * as firebase from 'firebase';
 import { AuthService } from 'src/shared/auth.service';
+import { Message } from 'src/shared/message.model';
 
 @Component({
   selector: 'app-coach',
@@ -15,6 +16,7 @@ export class CoachComponent implements OnInit {
   coach: Coach;
   userType: String;
   show = false;
+  message: Message;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +26,7 @@ export class CoachComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCoach();
-    this.userType = this.authService.getCurrentUserType()
+    this.userType = this.authService.getCurrentUserType();
   }
 
   updateCoach() {
@@ -43,21 +45,25 @@ export class CoachComponent implements OnInit {
   getCoach() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.coachService.getCoach(id).subscribe(coach => this.coach = coach);
-    console.log(this.coach);
   }
 
   getConversation() {
     this.userType = this.authService.getCurrentUserType();
   }
 
-  onSendMessage() {
-    console.log("message sent");
+  onSendMessage(mymessage) {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.message.content = mymessage;
+    // this.message.emitter = this.userType;
+    this.coachService.postMessage(id, 1, mymessage);
   }
 
   isUserAdmin() {
-    if (this.authService.getCurrentUserType() === 'admin') {
+    if (this.userType === 'admin') {
     return true;
     }
+    else{
     return false;
+    }
   }
 }

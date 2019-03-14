@@ -7,22 +7,23 @@
   </div>
 <div class="container">
   <div class ="coachdetail col-xl-2 ">
-    <p class="coachname">{{coach.name}} {{coach.lastname}}</p>
+    <p class="coachname">{{coach.name}} {{coach.lastname}} </p>
       <p class="coachlocation"><i class="material-icons">
           room
         </i>{{coach.zipcode}} {{coach.city}}</p>
-        <ng-template [*ngIf="isUserAdmin"]>
-          <button type="button" class="btn btn-success" (click)="show = !show">Update</button>
+        <ng-template [ngIf]="isUserAdmin()">
           <button type="button" class="btn btn-danger" (click)="deleteCoach()">Delete</button>
         </ng-template>
+        <ng-template [ngIf]="!isUserAdmin()">
         <div class="input-group">
           <div class="input-group-prepend">
-            <span role="button" class="input-group-text" (click)="onSendMessage()">Send Message</span>
+            <span role="button" class="input-group-text" (click)="onSendMessage(mymessage)">Send Message</span>
           </div>
-          <textarea class="form-control" aria-label="With textarea"></textarea>
+          <textarea class="form-control" [(ngModel)]="mymessage" aria-label="With textarea"></textarea>
         </div>
+      </ng-template>
   </div>
-<ng-template [*ngIf="isUserAdmin"]>
+<ng-template [ngIf]="isUserAdmin()">
   <div class ="coachinfos col-xl-6 offset-xl-3">
           <form (ngSubmit)="updateCoach(f)" #f="ngForm" class="col-md-5 col-xl-4 offset-md-4 offset-xl-4">
               <div class="form-group">
@@ -49,11 +50,14 @@
                 <label for="exampleTextarea">Activities</label>
                 <textarea class="form-control" id="exampleTextarea" name="activities" rows="3" [(ngModel)]="coach.activities"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Update</button>
             </form>
   </div>
 </ng-template>
+<ng-template [ngIf]="!isUserAdmin()">
 <div class ="coachinfos col-xl-6 offset-xl-4">
 <app-conversation></app-conversation>
 </div>
+</ng-template>
+
 </div>

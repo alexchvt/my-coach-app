@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core'
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Coach } from './coach.model';
 import { Observable } from 'rxjs';
+import { Message } from './message.model';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -38,6 +39,14 @@ export class CoachsService {
 
     getCoach(id): Observable<Coach> {
         return this.httpClient.get<Coach>(this.serverUrl + '/coaches/' + id);
+    }
+
+    getMessages(coachId, learnerId): Observable<Message[]> {
+      return this.httpClient.get<Message[]>(this.serverUrl + '/coach/' + coachId + '/' + learnerId + '/message');
+    }
+
+    postMessage(coachId, learnerId, message: Message): Observable<Message[]> {
+      return this.httpClient.post<Message[]>(this.serverUrl + '/coach/' + coachId + '/' + learnerId + '/message', message);
     }
 
 }
