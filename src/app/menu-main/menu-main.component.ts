@@ -12,6 +12,7 @@ import { AuthService } from 'src/shared/auth.service';
 export class MenuMainComponent implements OnInit {
   navbarOpen = false;
   coaches: Coach[];
+  email: string;
 
   searchContent: string;
 
@@ -28,6 +29,13 @@ export class MenuMainComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  userIsAdmin() {
+    if (this.authService.getCurrentUserType() == 'admin') {
+    return true;
+    }
+    return false;
   }
 
   toggleNavbar() {

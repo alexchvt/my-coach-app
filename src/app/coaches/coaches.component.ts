@@ -15,7 +15,7 @@ export class CoachesComponent implements OnInit {
 
   searchString: string;
   coaches: Coach[];
-  subscription: Subscription
+  subscription: Subscription;
 
   constructor(private coachsService: CoachsService, private menuservice: MenuService, private authService: AuthService) {
     this.subscription = menuservice.searchContent$.subscribe(searchString => {
@@ -29,7 +29,7 @@ export class CoachesComponent implements OnInit {
     });
   }
 
-  
+
 
   ngOnInit(): void {
     this.coachsService.getCoachs().subscribe(
